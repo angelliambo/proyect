@@ -1,0 +1,26 @@
+{
+	"name": "meli-test-bff",
+	"version": "1.0.0",
+	"description": "Test ",
+	"main": "index.ts",
+	"dependencies": {
+		"@types/express": "^4.17.21",
+		"@types/node": "^20.11.0",
+		"axios": "^1.6.5",
+		"env-cmd": "^10.1.0",
+		"express": "^4.18.2",
+		"rxjs": "^7.8.1"
+	},
+	"devDependencies": {
+		"ts-node": "^10.9.2",
+		"typescript": "^5.3.3"
+	},
+	"scripts": {
+		"build": "env-cmd -f ./environments/.priduction.env ts-node build",
+		"start:dev": "env-cmd -f ./environments/.develop.env ts-node ./src/index.ts --watch",
+		"start:debug": "env-cmd -f ./environments/.staging.env ts-node src/index.ts --debug --watch",
+		"start": "ts-node dist/main"
+	},
+	"author": "Angel Liambo",
+	"license": "ISC"
+}
