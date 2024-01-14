@@ -3,8 +3,6 @@ import { Request } from "express";
 
 class ExampleService {
 	async searchItems(req: Request) {
-		console.log(":: ~ ExampleService ~ searchItems ~ req", req.query.q);
-
 		try {
 			const response = await axios.get(
 				`${process.env.MELI_API}/sites/MLA/search?q=${req.query.q}&limit=4`

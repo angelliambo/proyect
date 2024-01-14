@@ -6,8 +6,6 @@ interface SearchListPageProps {
 }
 
 const SearchListPage = ({ allItems }: SearchListPageProps) => {
-	console.log(":: ~ SearchListPage ~ allItems", allItems);
-
 	return <div className="page">List</div>;
 };
 

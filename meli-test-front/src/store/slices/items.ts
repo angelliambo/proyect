@@ -47,7 +47,6 @@ const initialState: InitialState = {
 const getOne = createAsyncThunk(
 	"item/getOne",
 	async (payload: GetOneItemOutDto) => {
-		// console.log('get one - item by id - action', payload)
 		const { response, error } = await services.items.getOne(payload);
 		if (error) {
 			throw new Error(error);
@@ -60,8 +59,6 @@ const getOne = createAsyncThunk(
 const getAll = createAsyncThunk(
 	"item/getAll",
 	async (payload: GetAllItemsOutDto) => {
-		console.log(":: ~ payload", payload);
-
 		const { response, error } = await services.items.getAll(payload);
 		if (error) {
 			throw new Error(error);
@@ -74,7 +71,6 @@ const getAll = createAsyncThunk(
 const getDescription = createAsyncThunk(
 	"item/getDescription",
 	async (payload: GetOneItemDescriptionOutDto) => {
-		// console.log('get one - item description - action', payload)
 		const { response, error } = await services.items.getItemDescription(
 			payload
 		);

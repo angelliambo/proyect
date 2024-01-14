@@ -22,8 +22,6 @@ class Item {
 	}
 
 	public getAll({ query }: GetAllItemsOutDto) {
-		console.log(":: ~ Item ~ getAll ~ query", query);
-
 		return action
 			.Get({
 				url: `${module}/?q=${query}`,
