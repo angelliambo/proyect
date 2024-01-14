@@ -2,9 +2,7 @@
 
 # dependencies
 meli-test-bff/node_modules
-meli-test-bff/environments
 meli-test-front/node_modules
-meli-test-front/src/environments
 /.vscode
 /.pnp
 .pnp.js

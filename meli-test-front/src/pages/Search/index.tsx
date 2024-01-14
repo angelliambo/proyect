@@ -1,15 +1,22 @@
-import { useEffect } from "react"
-import { useDispatch } from 'react-redux'
-import { AppDispatch } from "../../store"
-import { getAll } from '../../store/slices/items'
+import { connect } from "react-redux";
+import "./mixins.scss";
 
-const Component = () => {
-  const dispatch = useDispatch<AppDispatch>()
+const SearchPage = ({ allItemsStates }) => {
+	return (
+		<div className="page">
+			<div className="container">
+				{allItemsStates?.loading && <p>..loading</p>}
+			</div>
+		</div>
+	);
+};
 
-  useEffect(() => {
-    dispatch(getAll({ query: 'silla' }))
-  }, [])
-  return <>Search</>
-}
+const states = ({ itemStore }) => {
+	const { data: allItems, states: allItemsStates } = itemStore.all;
+	return {
+		allItems: allItems?.results,
+		allItemsStates,
+	};
+};
 
-export default Component
+export default connect(states)(SearchPage);

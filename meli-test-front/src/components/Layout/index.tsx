@@ -1,11 +1,12 @@
 import { Outlet } from "react-router-dom";
+import "./mixins.scss";
 
-interface ComponentProps { }
-
-const Component = ({ }: ComponentProps) => {
-  return (
-    <Outlet />
-  );
+const Component = () => {
+	return (
+		<div className="pageBg">
+			<Outlet />
+		</div>
+	);
 };
 
 export default Component;
