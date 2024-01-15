@@ -1,21 +1,28 @@
 import { connect } from "react-redux";
 import "./mixins.scss";
+import Loader from "../../components/Loader";
 
-const SearchPage = ({ allItemsStates }) => {
+interface SearchPageProps {
+	states: {
+		allItemsLoading: boolean;
+	};
+}
+
+const SearchPage = ({ states }: SearchPageProps) => {
+	const { allItemsLoading } = states;
 	return (
 		<div className="page">
-			<div className="container">
-				{allItemsStates?.loading && <p>..loading</p>}
-			</div>
+			<div className="container">{allItemsLoading && <Loader />}</div>
 		</div>
 	);
 };
 
 const states = ({ itemStore }) => {
-	const { data: allItems, states: allItemsStates } = itemStore.all;
+	const { loading } = itemStore.all;
 	return {
-		allItems: allItems?.results,
-		allItemsStates,
+		states: {
+			allItemsLoading: loading,
+		},
 	};
 };
 
