@@ -1,12 +1,14 @@
 // app.ts
 import express, { Application } from "express";
 import modulesRouter from "./modules";
+import cors from "cors";
 
 class App {
 	private app: Application;
 
 	constructor() {
 		this.app = express();
+		this.app.use(cors());
 		this.config();
 		this.routes();
 	}

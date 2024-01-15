@@ -1,15 +1,29 @@
-import { useEffect } from "react"
-import { useDispatch } from 'react-redux'
-import { AppDispatch } from "../../store"
-import { getAll } from '../../store/slices/items'
+import { connect } from "react-redux";
+import "./mixins.scss";
+import Loader from "../../components/Loader";
 
-const Component = () => {
-  const dispatch = useDispatch<AppDispatch>()
-
-  useEffect(() => {
-    dispatch(getAll({ query: 'silla' }))
-  }, [])
-  return <>Search</>
+interface SearchPageProps {
+	states: {
+		allItemsLoading: boolean;
+	};
 }
 
-export default Component
+const SearchPage = ({ states }: SearchPageProps) => {
+	const { allItemsLoading } = states;
+	return (
+		<div className="page">
+			<div className="container">{allItemsLoading && <Loader />}</div>
+		</div>
+	);
+};
+
+const states = ({ itemStore }) => {
+	const { loading } = itemStore.all;
+	return {
+		states: {
+			allItemsLoading: loading,
+		},
+	};
+};
+
+export default connect(states)(SearchPage);

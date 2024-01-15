@@ -1,0 +1,87 @@
+@import "../../../constants/colors.scss";
+
+.wrapper {
+	width: 100%;
+	min-height: 60px;
+	background-color: $primary;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1000;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.navContainer {
+	margin: 10px 100px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+.home-link {
+	height: 36px;
+}
+
+.nav-logo {
+	height: 40px;
+}
+
+.nav {
+	display: flex;
+	align-items: center;
+	form {
+		display: flex;
+		align-items: center;
+	}
+}
+
+.searchKeyWord {
+	line-height: 30px;
+	border-radius: 3px 0px 0px 3px;
+	border: 0px;
+	padding: 0px 15px;
+	margin-left: 15px;
+	width: 1060px;
+
+	&:focus {
+		outline: none;
+	}
+
+	&:disabled {
+		background-color: white;
+	}
+}
+
+.submit {
+	background-color: $elementsBg;
+	height: 30px;
+	width: 30px;
+	padding: 0px;
+	border-radius: 0px 3px 3px 0px;
+	border: 0px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	:hover {
+		cursor: pointer;
+	}
+}
+
+.search {
+	width: 36px;
+	height: 36px;
+}
+
+.error-container {
+	width: 100%;
+	max-width: 400px;
+	position: absolute;
+	top: calc(100% + 30px);
+	left: calc(50% - 200px);
+}
