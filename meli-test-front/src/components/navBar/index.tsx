@@ -9,9 +9,17 @@ import { connect, useDispatch } from "react-redux";
 import { getAll } from "../../store/slices/items";
 // Styles
 import "./mixins.scss";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import ErrorMsg from "../ErrorMsg";
 
-const NavBar = () => {
+const NavBar = ({ states }) => {
 	const dispatch = useDispatch<AppDispatch>();
+	const navigate = useNavigate();
+	const location = useLocation();
+	const { pathname } = location;
+	const [showError, setShowError] = useState(false);
+	const { allItemsSuccess, allItemsLoading, allItemsError } = states;
 	const { control, formState, handleSubmit } = useForm({
 		mode: "onChange",
 		reValidateMode: "onChange",
@@ -20,14 +28,28 @@ const NavBar = () => {
 	// Handler - Submit
 	const submitHandler = ({ searchKeyWord }) => {
 		if (searchKeyWord) {
-			dispatch(getAll({ query: searchKeyWord }));
+			dispatch(getAll({ query: searchKeyWord ?? "" }));
 		}
 	};
+
+	useEffect(() => {
+		if (allItemsSuccess && pathname !== "/items") {
+			navigate("/items");
+		}
+		if (allItemsError) {
+			setShowError(true);
+		}
+		if (allItemsLoading) {
+			setShowError(false);
+		}
+	}, [states]);
 
 	return (
 		<div className="wrapper">
 			<div className="navContainer">
-				<img src={NavLogoSrc53x36} alt="" className="navlogo" />
+				<a href="/" className="home-link">
+					<img src={NavLogoSrc53x36} alt="" className="navlogo" />
+				</a>
 				<nav className="nav">
 					<form id="form-search" onSubmit={handleSubmit(submitHandler)}>
 						<Controller
@@ -41,6 +63,7 @@ const NavBar = () => {
 							}}
 							render={({ onChange, value }) => (
 								<input
+									disabled={allItemsLoading}
 									className="searchKeyWord"
 									value={value}
 									onChange={onChange}
@@ -63,17 +86,25 @@ const NavBar = () => {
 						</button>
 					</form>
 				</nav>
+
+				{showError && (
+					<div className="error-container">
+						<ErrorMsg toggleVisivility={setShowError} />
+					</div>
+				)}
 			</div>
 		</div>
 	);
 };
 
-// export default NavBar;
 const states = ({ itemStore }) => {
-	const { data: allItems, states: allItemsStates } = itemStore.all;
+	const { loading, success, error } = itemStore.all;
 	return {
-		allItems: allItems?.results,
-		allItemsStates,
+		states: {
+			allItemsSuccess: success,
+			allItemsLoading: loading,
+			allItemsError: error,
+		},
 	};
 };
 

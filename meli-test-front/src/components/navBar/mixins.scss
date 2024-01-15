@@ -20,6 +20,11 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	position: relative;
+}
+
+.home-link {
+	height: 36px;
 }
 
 .nav-logo {
@@ -46,6 +51,10 @@
 	&:focus {
 		outline: none;
 	}
+
+	&:disabled {
+		background-color: white;
+	}
 }
 
 .submit {
@@ -67,4 +76,12 @@
 .search {
 	width: 36px;
 	height: 36px;
+}
+
+.error-container {
+	width: 100%;
+	max-width: 400px;
+	position: absolute;
+	top: calc(100% + 30px);
+	left: calc(50% - 200px);
 }
