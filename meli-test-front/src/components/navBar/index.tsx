@@ -69,7 +69,7 @@ const NavBar = ({ states }) => {
 									onChange={onChange}
 									type="text"
 									name="searchKeyWord"
-									placeholder="Nunca dejes de buscar"
+									placeholder="No dejes de buscar"
 								/>
 							)}
 						/>

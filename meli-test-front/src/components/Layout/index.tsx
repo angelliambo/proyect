@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import "./mixins.scss";
 
-const Component = () => {
+const AppLayout = () => {
 	return (
 		<div className="pageBg">
 			<Outlet />
@@ -9,4 +9,4 @@ const Component = () => {
 	);
 };
 
-export default Component;
+export default AppLayout;
