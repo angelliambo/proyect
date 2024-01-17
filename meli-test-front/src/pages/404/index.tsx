@@ -1,5 +1,13 @@
-const Component = () => {
-  return <>404</>
-}
+import "../../constants/page-styles.scss";
 
-export default Component
+const NotFound = () => {
+	return (
+		<div className="page">
+			<div className="container">
+				<h1> PAGE NOT FOUND </h1>
+			</div>
+		</div>
+	);
+};
+
+export default NotFound;
