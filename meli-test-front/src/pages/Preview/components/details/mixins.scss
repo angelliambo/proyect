@@ -1,0 +1,17 @@
+@import "../../../../constants/colors.scss";
+
+.detailWrapper {
+	padding: 0px 32px 32px;
+}
+
+.sectionTitle {
+	font-size: 28px;
+	color: $mainText;
+	margin: 0px 0px 32px;
+}
+
+.productDetail {
+	margin: 0px;
+	font-size: 16px;
+	color: $captionText;
+}
