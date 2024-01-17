@@ -1,0 +1,55 @@
+@import "../../../../constants/screen-sizes.scss";
+@import "../../../../constants/colors.scss";
+
+.productDetailWrapper {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	padding: 32px 32px 0;
+	flex-direction: column;
+
+	@media (min-width: $md) {
+		flex-direction: row;
+	}
+}
+
+.productImg {
+	width: 224px;
+
+	@media (min-width: $sm) {
+		width: 329px;
+	}
+
+	@media (min-width: $md) {
+		width: 324px;
+	}
+
+	@media (min-width: $lg) {
+		width: 680px;
+	}
+}
+
+.summaryInfo {
+	.condition {
+		font-size: 14px;
+		color: $captionText;
+		margin: 0 0 16px;
+	}
+
+	.productTitle {
+		font-size: 24px;
+		color: $mainText;
+		margin: 0 0 32px;
+		max-width: 300px;
+	}
+
+	.price {
+		font-size: 46px;
+		color: $mainText;
+		margin: 0 0 32px;
+	}
+
+	.primaryButton {
+		margin: 0 0 32px 0;
+	}
+}
