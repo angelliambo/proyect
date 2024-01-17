@@ -1,6 +1,10 @@
+// Redux
 import { connect } from "react-redux";
-import "./mixins.scss";
+// Components
 import Loader from "../../components/Loader";
+import SeoHelmet from "../../components/Helmet";
+// Styles
+import "../../constants/page-styles.scss";
 
 interface SearchPageProps {
 	states: {
@@ -12,6 +16,7 @@ const SearchPage = ({ states }: SearchPageProps) => {
 	const { allItemsLoading } = states;
 	return (
 		<div className="page">
+			<SeoHelmet description="Listado de articulos" />
 			<div className="container">{allItemsLoading && <Loader />}</div>
 		</div>
 	);
