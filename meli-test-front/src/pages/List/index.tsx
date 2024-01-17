@@ -1,8 +1,16 @@
+// Tools
+import { useEffect, useState } from "react";
+// Redux
 import { connect } from "react-redux";
+// Types
 import { ItemDto } from "../../types/item.dto";
+// Components
+import SeoHelmet from "../../components/Helmet";
 import Loader from "../../components/Loader";
 import ErrorMsg from "../../components/ErrorMsg";
-import { useEffect, useState } from "react";
+import Item from "./components/Item";
+// Styles
+import "./mixins.scss";
 
 interface SearchListPageProps {
 	allItems?: ItemDto[];
@@ -28,22 +36,33 @@ const SearchListPage = ({ allItems, states }: SearchListPageProps) => {
 		}
 	}, [states]);
 
+	// if (!allItems || allItems?.length < 1) {
+	// 	return (
+	// 		<div className="page">
+	// 			<div className="container">
+	// 				<div className="empty-state">EMPTY</div>
+	// 			</div>
+	// 		</div>
+	// 	);
+	// }
+
 	return (
 		<div className="page">
+			<SeoHelmet description={"No dejes de buscar"} path={"/items"} />
 			<div className="container">
-				{allItems && allItems.length > 0 ? (
+				{allItems && allItems?.length > 0 && (
 					<ul id="search-list">
 						{allItems.map((item, i) => {
 							const elKey = i + 1;
+							const lastItem = i === allItems.length - 1;
 							return (
-								<li className="list-item" key={elKey}>
-									ITEM
+								<li key={elKey} className="list-item">
+									<Item product={item} />
+									{!lastItem && <hr className="soft-line" />}
 								</li>
 							);
 						})}
 					</ul>
-				) : (
-					<div className="empty-state">EMPTY</div>
 				)}
 				{allItemsLoading && <Loader />}
 				{showError && <ErrorMsg toggleVisivility={setShowError} />}

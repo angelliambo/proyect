@@ -1,0 +1,40 @@
+@import "../../../constants/colors.scss";
+
+.listElement {
+	padding: 32px 16px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+
+.itemLink {
+	display: flex;
+	align-items: center;
+}
+
+.productImg {
+	width: 180px;
+	height: 180px;
+	margin-right: 16px;
+}
+
+.price {
+	color: $mainText;
+	margin: 0px 0px 32px;
+}
+
+.generalDescription {
+	max-width: 500px;
+	color: $secondaryText;
+}
+
+.locationWrapper {
+	margin-top: 35px;
+	width: 100%;
+	max-width: 300px;
+}
+
+.location {
+	margin: 0px;
+	color: $captionText;
+}
