@@ -31,7 +31,13 @@ const App = () => {
 			<BrowserRouter>
 				<ScrollToTop useLocation={useLocation} />
 				<NavBar />
-				<Suspense fallback={<Loader />}>
+				<Suspense
+					fallback={
+						<div className="fallbackLoaderWrapper">
+							<Loader />
+						</div>
+					}
+				>
 					<Routes>
 						<Route path="/" element={<AppLayout />}>
 							<Route index element={<SearchPage />} />

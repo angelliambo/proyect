@@ -1,10 +1,19 @@
+@import "./screen-sizes.scss";
 @import "./colors.scss";
 
 .page {
-	padding: 60px 50px 50px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	padding: 60px 16px 16px;
+
+	@media (min-width: $md) {
+		padding: 60px 30px 30px;
+	}
+
+	@media (min-width: $lg) {
+		padding: 60px 48px 48px;
+	}
 }
 
 .container {
@@ -13,6 +22,12 @@
 	margin-top: 50px;
 	background-color: white;
 	border-radius: 3px;
+}
+
+.loaderWrapper {
+	min-height: 50vh;
+	width: 100%;
+	margin: 40px auto 0px;
 }
 
 .primaryButton {
@@ -28,5 +43,4 @@
 	justify-content: center;
 	border-radius: 3px;
 	width: 100%;
-	max-width: 200px;
 }

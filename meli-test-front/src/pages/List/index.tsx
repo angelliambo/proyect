@@ -22,9 +22,7 @@ interface SearchListPageProps {
 }
 
 const SearchListPage = ({ allItems, states }: SearchListPageProps) => {
-	console.log(":: ~ SearchListPage ~ allItems", allItems);
-
-	const { allItemsSuccess, allItemsLoading, allItemsError } = states;
+	const { allItemsLoading, allItemsError } = states;
 	const [showError, setShowError] = useState(false);
 
 	useEffect(() => {
@@ -35,16 +33,6 @@ const SearchListPage = ({ allItems, states }: SearchListPageProps) => {
 			setShowError(false);
 		}
 	}, [states]);
-
-	// if (!allItems || allItems?.length < 1) {
-	// 	return (
-	// 		<div className="page">
-	// 			<div className="container">
-	// 				<div className="empty-state">EMPTY</div>
-	// 			</div>
-	// 		</div>
-	// 	);
-	// }
 
 	return (
 		<div className="page">
@@ -64,7 +52,12 @@ const SearchListPage = ({ allItems, states }: SearchListPageProps) => {
 						})}
 					</ul>
 				)}
-				{allItemsLoading && <Loader />}
+				{allItemsLoading && (
+					<div className="loaderWrapper">
+						<Loader />
+					</div>
+				)}
+
 				{showError && <ErrorMsg toggleVisivility={setShowError} />}
 			</div>
 		</div>
