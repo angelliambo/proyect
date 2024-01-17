@@ -1,26 +1,32 @@
-@import "../../../constants/colors.scss";
+@import "../../constants/screen-sizes.scss";
+@import "../../constants/colors.scss";
 
 .wrapper {
-	width: 100%;
 	min-height: 60px;
 	background-color: $primary;
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	z-index: 1000;
+	right: 0;
 
+	z-index: 1000;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
 .navContainer {
-	margin: 10px 100px;
 	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	position: relative;
+	margin: 10px 30px;
+	max-width: 1060px;
+
+	@media (min-width: $md) {
+		margin: 10px 50px;
+	}
 }
 
 .home-link {
@@ -32,9 +38,11 @@
 }
 
 .nav {
+	width: 100%;
 	display: flex;
 	align-items: center;
 	form {
+		width: 100%;
 		display: flex;
 		align-items: center;
 	}
@@ -42,11 +50,12 @@
 
 .searchKeyWord {
 	line-height: 30px;
-	border-radius: 3px 0px 0px 3px;
+	border-radius: 5px 0px 0px 5px;
 	border: 0px;
 	padding: 0px 15px;
 	margin-left: 15px;
-	width: 1060px;
+	width: 100%;
+	max-width: 1060px;
 
 	&:focus {
 		outline: none;
@@ -61,8 +70,8 @@
 	background-color: $elementsBg;
 	height: 30px;
 	width: 30px;
-	padding: 0px;
-	border-radius: 0px 3px 3px 0px;
+	padding: 2px 15px;
+	border-radius: 0px 5px 5px 0px;
 	border: 0px;
 	display: flex;
 	align-items: center;

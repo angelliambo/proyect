@@ -1,7 +1,6 @@
-@import "../../../constants/colors.scss";
+@import "../../constants/colors.scss";
 
 .pageBg {
+	min-height: calc(100vh - 60px);
 	background-color: $pageContenBg;
-	height: 100vh;
-	width: 100%;
 }

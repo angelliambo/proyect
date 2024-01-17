@@ -1,0 +1,17 @@
+@import "../../constants/colors.scss";
+
+#search-list {
+	margin: 0px;
+	padding: 0px;
+}
+
+.list-item {
+	list-style: none;
+}
+
+.soft-line {
+	margin: 0px 16px;
+	width: calc(100% - 32px);
+	border: 1px solid $captionText;
+	opacity: 0.2;
+}

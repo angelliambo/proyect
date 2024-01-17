@@ -1,0 +1,18 @@
+@import "../../constants/screen-sizes.scss";
+@import "../../constants/colors.scss";
+
+#page-footer {
+	margin: 0px;
+	background-color: $pageContenBg;
+	padding: 16px;
+
+	@media (min-width: $md) {
+		padding: 20px 100px;
+	}
+}
+
+.footer-content {
+	margin: 0px;
+	font-size: 15px;
+	max-width: 1300px;
+}
