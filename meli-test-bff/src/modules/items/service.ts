@@ -10,7 +10,7 @@ class ExampleService {
 			return response.data;
 		} catch (error) {
 			console.error("Error:", error);
-			throw error; // Re-throw the error to handle it in the controller
+			throw error;
 		}
 	}
 
@@ -22,7 +22,7 @@ class ExampleService {
 			return response.data;
 		} catch (error) {
 			console.error("Error:", error);
-			throw error; // Re-throw the error to handle it in the controller
+			throw error;
 		}
 	}
 
@@ -34,7 +34,7 @@ class ExampleService {
 			return response.data;
 		} catch (error) {
 			console.error("Error:", error);
-			throw error; // Re-throw the error to handle it in the controller
+			throw error;
 		}
 	}
 }
