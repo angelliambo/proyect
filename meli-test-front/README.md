@@ -1,49 +1,188 @@
-# Getting Started with Create React App
+<div style="display: flex; align-items: center; justify-content: space-evenly; width: 100%;">
+  <h1 style="width: 100%; max-width: 250px; color:#3483fa;">
+    Proyecto Meli-test
+  </h1>
 
-cd meli-test-bff
-cd meli-test-front
+  <div style="width: 300px">
+    ![Logo del proyecto](https://github.com/angelliambo/proyect/blob/master/meli-test-front/public/logo512.png)
+  </div>
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Índice
 
-## Available Scripts
+1. [Descripción](#descripción)
+2. [Tecnologías](#tecnologías)
+3. [Arquitectura](#arquitectura)
+4. [Instalación](#instalación)
+5. [Uso](#uso)
 
-In the project directory, you can run:
+## Descripción
 
-### `npm start`
+Este proyecto es una aplicación que con la utilizacion de herramientas tanto de frontend como backend logramos consultar endpoint algunos funcionales de mercado libre y mostrar su contenido segun lineamientos especificos.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+La aplicacion consta de 3 pantallas:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- _home_ "/"
+- _ListItems_ "/items"
+- _Preview_ "/items/:id"
 
-### `npm test`
+## Tecnologías
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Las bases de Las tecnologías utilizadas en este proyecto, para FRONT react con typescript y para backend node con typescript y express.
 
-### `npm run build`
+## Arquitectura
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<ul>
+    <li>
+     <strong>
+       meli-test-bff
+      </strong>
+   <ul>
+  <li>
+    <strong>
+       environments: 
+    </strong>
+       archivos de entorno
+  </li>
+  </ul>
+    <ul>
+      <li>
+        <strong>
+          src
+        </strong>
+          <ul>
+            <li>
+             <strong>
+                modules
+              </strong>
+                  servicios bff
+              <ul>
+             </ul>
+            </li>
+            <li>
+              - app.ts
+            </li>
+            <li>
+              - index.ts
+            </li>
+          </ul>
+      </li>
+    </ul>
+  </li>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  <li>
+  <strong>
+    meli-test-front
+  </strong>
+  <ul>
+  <li>
+    <strong>
+       environments: 
+    </strong>
+       archivos de entorno
+  </li>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  <li>
+    <strong>
+       public: 
+    </strong>
+  </li>
 
-### `npm run eject`
+  <li>
+    <strong>
+       src: 
+    </strong>
+    <ul>
+      <li>
+        <strong>
+          componets
+          </strong>
+          Componentes reutilizables e imagenes.
+      </li>
+      <li>
+        <strong>
+          constants
+          </strong>
+          Constantes de estilos reutilibles.
+      </li>
+      <li>
+        <strong>
+          helpers
+        </strong>
+         Definimos y tipamos actions para el store
+      </li>
+      <li>
+        <strong>
+          pages
+          </strong>
+          Todas las pages que se van a utilizar en la navegacion
+      </li>
+      <li>
+        <strong>
+          services
+        </strong>
+        servicios para ser consumidos en el store
+      </li>
+      <li>
+        <strong>
+          store
+        </strong>
+      </li>
+      <li>
+        <strong>
+          types
+        </strong>
+          typados, modelos
+      </li>
+    </ul>
+  </li>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+  </ul>
+  </li>
+</ul>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Instalación
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Para instalar y ejecutar el proyecto, sigue estos pasos:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<ol style="
+list-style-type: upper-roman; 
+border: 1px solid red;
+border-radius: 5px;
+ ">
+  <li style="margin: 15px 0px;">
+    Clona el repositorio desde GitHub: `git clone https://github.com/angelliambo/proyect.git`
+  </li>
 
-## Learn More
+  <li style="margin-bottom: 10px;">
+    Desde la terminal navega al backend del proyecto: `cd proyect/meli-test-bff`
+  </li>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  <li style="margin-bottom: 10px;">
+    Instala las dependencias: `yarn`
+  </li>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  <li style="margin-bottom: 10px;">
+    Desde la terminal navega al frontend del proyecto: `cd proyect/meli-test-front`
+  </li>
+
+  <li style="margin-bottom: 10px;">
+    Instala las dependencias: `yarn`
+  </li>
+
+  <li style="margin-bottom: 10px;">
+    Ejecuta BFF: 
+    <br />
+    - BFF en modo desarrollo desde una terminal navega al bff (paso: 2), y ejecuta el comando <strong>`yarn start:dev`</strong>
+  </li>
+
+  <li style="margin: 15px 0px;">
+    Ejecuta FRONT: 
+    <br />
+    - Desde otra terminal navega al front (paso: 4), y ejecuta el comando <strong>`yarn start`</strong>
+  </li>
+</ol>
+
+## Uso
+
+Una vez que la aplicación esté en funcionamiento, puedes acceder a ella a través de tu navegador web en la siguiente dirección: `http://localhost:3000`, realiza una busqueda.
