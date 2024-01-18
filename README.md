@@ -1,12 +1,4 @@
-<div style="display: flex; align-items: center; justify-content: space-evenly; width: 100%;">
-  <h1 style="width: 100%; max-width: 250px; color:#3483fa;">
-    Proyecto Meli-test
-  </h1>
-
-  <div style="width: 300px">
-    ![Logo del proyecto](https://github.com/angelliambo/proyect/blob/master/meli-test-front/public/logo512.png)
-  </div>
-</div>
+# Proyecto Meli-test
 
 ## Índice
 
@@ -24,11 +16,13 @@ La aplicacion consta de 3 pantallas:
 
 - _home_ "/"
 - _ListItems_ "/items"
-- _Preview_ "/items/:id"
+- _Preview_ "/items/:id/descripcion"
 
 ## Tecnologías
 
-Las bases de Las tecnologías utilizadas en este proyecto, para FRONT react con typescript y para backend node con typescript y express.
+Las bases de Las tecnologías utilizadas en este proyecto:
+FRONT > react con typescript
+BACKEND > node con typescript y express.
 
 ## Arquitectura
 
