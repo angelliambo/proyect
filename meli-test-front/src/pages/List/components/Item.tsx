@@ -10,22 +10,22 @@ const Item = ({ product }) => {
 	} = product;
 
 	return (
-		<div className="listElement">
-			<a href={`/item/${id}`} className="itemLink">
+		<div className="list-Element">
+			<a href={`/item/${id}`} className="list-itemLink">
 				{thumbnail && (
-					<img src={thumbnail} alt="product img" className="productImg" />
+					<img src={thumbnail} alt="product img" className="list-productImg" />
 				)}
-				<div className="generalDescription">
+				<div className="list-generalDescription">
 					{price && (
-						<h3 className="price">
+						<h3 className="list-price">
 							{currency_id === "ARS" ? "$" : "u$d"} {price}
 						</h3>
 					)}
-					{title && <p className="listElementTitle">{title}</p>}
+					{title && <p className="list-ElementTitle">{title}</p>}
 				</div>
 			</a>
-			<div className="locationWrapper">
-				<p className="location">[location]</p>
+			<div className="list-locationWrapper">
+				<p className="list-location">[location]</p>
 			</div>
 		</div>
 	);

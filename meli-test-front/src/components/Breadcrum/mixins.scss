@@ -1,0 +1,26 @@
+@import "../../constants/screen-sizes.scss";
+@import "../../constants/colors.scss";
+
+#breadcrum-wrapper {
+	width: 100%;
+	margin-top: 16px;
+	display: flex;
+	align-items: center;
+	max-width: 288px;
+
+	@media (min-width: $md) {
+		max-width: 614px;
+	}
+
+	@media (min-width: $lg) {
+		max-width: 1200px;
+	}
+}
+
+.bread {
+	margin-right: 10px;
+	color: $captionText;
+	line-height: 19px;
+	font-size: 15px;
+	word-break: keep-all;
+}

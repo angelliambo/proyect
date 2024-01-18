@@ -8,21 +8,14 @@ import NavBar from "./components/navBar";
 import Footer from "./components/footer";
 import Loader from "./components/Loader";
 
+// import SearchPage from "./pages/Search";
+import ItemsListPage from "./pages/List";
+import ItemPreviewPage from "./pages/Preview";
+import NotFoundPage from "./pages/404";
+
 // Lazy pages
 const SearchPage = lazy(
 	() => import(/* webpackChunkName: "SearchPage" */ "./pages/Search")
-);
-
-const ItemsListPage = lazy(
-	() => import(/* webpackChunkName: "ItemsListPage" */ "./pages/List")
-);
-
-const ItemPreviewPage = lazy(
-	() => import(/* webpackChunkName: "ItemPreviewPage" */ "./pages/Preview")
-);
-
-const NotFoundPage = lazy(
-	() => import(/* webpackChunkName: "NotFoundPage" */ "./pages/404")
 );
 
 const App = () => {
@@ -31,13 +24,7 @@ const App = () => {
 			<BrowserRouter>
 				<ScrollToTop useLocation={useLocation} />
 				<NavBar />
-				<Suspense
-					fallback={
-						<div className="fallbackLoaderWrapper">
-							<Loader />
-						</div>
-					}
-				>
+				<Suspense fallback={<Loader />}>
 					<Routes>
 						<Route path="/" element={<AppLayout />}>
 							<Route index element={<SearchPage />} />
