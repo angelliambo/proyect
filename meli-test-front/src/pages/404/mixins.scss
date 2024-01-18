@@ -1,0 +1,30 @@
+@import "../../constants/screen-sizes.scss";
+@import "../../constants/colors.scss";
+
+.not-found-page {
+	padding: 60px 16px 16px;
+	height: calc(100vh - 150px);
+	background-color: $pageContenBg;
+	@media (min-width: $md) {
+		padding: 60px 30px 30px;
+	}
+
+	@media (min-width: $lg) {
+		padding: 60px 48px 48px;
+	}
+}
+
+.not-found-container {
+	width: 100%;
+	max-width: 1200px;
+	margin-top: 16px;
+	background-color: white;
+	border-radius: 3px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 300px;
+}
+
+.not-found-title {
+}
