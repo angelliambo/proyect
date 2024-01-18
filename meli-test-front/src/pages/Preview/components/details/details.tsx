@@ -18,8 +18,6 @@ interface DetailsProps {
 }
 
 const Details = ({ description, descriptionStates }: DetailsProps) => {
-	console.log(":: ~ Details ~ description", description);
-
 	const [showError, setShowError] = useState(false);
 
 	useEffect(() => {

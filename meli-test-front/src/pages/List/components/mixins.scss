@@ -1,40 +1,46 @@
+@import "../../../constants/screen-sizes.scss";
 @import "../../../constants/colors.scss";
 
-.listElement {
+.list-Element {
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
+	flex-direction: column;
 	padding: 32px 16px;
+
+	@media (min-width: $md) {
+		flex-direction: row;
+	}
 }
 
-.itemLink {
+.list-itemLink {
 	display: flex;
 	align-items: center;
 }
 
-.productImg {
+.list-productImg {
 	width: 180px;
 	height: 180px;
 	margin-right: 16px;
 }
 
-.price {
+.list-price {
 	color: $mainText;
 	margin: 0px 0px 32px;
 }
 
-.generalDescription {
+.list-generalDescription {
 	max-width: 500px;
 	color: $secondaryText;
 }
 
-.locationWrapper {
+.list-locationWrapper {
 	margin-top: 35px;
 	width: 100%;
 	max-width: 300px;
 }
 
-.location {
+.list-location {
 	margin: 0px;
 	color: $captionText;
 }

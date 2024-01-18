@@ -11,9 +11,11 @@ import ErrorMsg from "../../components/ErrorMsg";
 import Item from "./components/Item";
 // Styles
 import "./mixins.scss";
+import Breadcrum from "../../components/Breadcrum";
 
 interface SearchListPageProps {
 	allItems?: ItemDto[];
+	breadcrumInfo;
 	states: {
 		allItemsSuccess: boolean;
 		allItemsLoading: boolean;
@@ -21,7 +23,11 @@ interface SearchListPageProps {
 	};
 }
 
-const SearchListPage = ({ allItems, states }: SearchListPageProps) => {
+const SearchListPage = ({
+	allItems,
+	states,
+	breadcrumInfo,
+}: SearchListPageProps) => {
 	const { allItemsLoading, allItemsError } = states;
 	const [showError, setShowError] = useState(false);
 
@@ -37,6 +43,8 @@ const SearchListPage = ({ allItems, states }: SearchListPageProps) => {
 	return (
 		<div className="page">
 			<SeoHelmet description={"No dejes de buscar"} path={"/items"} />
+
+			<Breadcrum info={breadcrumInfo} />
 			<div className="container">
 				{allItems && allItems?.length > 0 && (
 					<ul id="search-list">
@@ -68,6 +76,7 @@ const states = ({ itemStore }) => {
 	const { data: allItems, loading, success, error } = itemStore.all;
 	return {
 		allItems: allItems?.results,
+		breadcrumInfo: allItems?.available_filters,
 		states: {
 			allItemsSuccess: success,
 			allItemsLoading: loading,
